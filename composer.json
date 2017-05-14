@@ -1,0 +1,28 @@
+{
+    "name": "pug-php/pug-filter-stylus",
+    "replace": {
+        "kylekatarnls/jade-filter-stylus": "self.version"
+    },
+    "description": "Render stylus code as compiled CSS in a style tag",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kyle Katarn",
+            "email": "kylekatarnls@gmail.com"
+        }
+    ],
+    "require": {
+        "pug-php/pug": "^2.0",
+        "nodejs-php-fallback/less": "^1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": ">=4.8 <6.0",
+        "codeclimate/php-test-reporter": "dev-master"
+    },
+    "autoload": {
+        "psr-0": {
+            "Pug": "src/"
+        }
+    }
+}

@@ -1,0 +1,32 @@
+//- set from php controller
+- $prev = $color
+
+//- set in the jade template
+- $color = 'red'
+
+head
+  :less
+    @prev: yellow;
+    p {
+      width: 200px;
+      color: #{color};
+      a {
+        color: #{prev};
+      }
+      em {
+        color: @prev;
+      }
+    }
+body
+  p
+    | I'm
+    =" "
+    =color
+    =" "
+    | but my links are
+    =" "
+    a=prev
+    =" "
+    | and my quotes are
+    =" "
+    em=prev
