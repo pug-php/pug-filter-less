@@ -1,10 +1,10 @@
-# pug-filter-stylus
+# pug-filter-less
 
-[![Latest Stable Version](https://poser.pugx.org/pug-php/pug-filter-stylus/v/stable.png)](https://packagist.org/packages/pug-php/pug-filter-stylus)
-[![Build Status](https://travis-ci.org/pug-php/pug-filter-stylus.svg?branch=master)](https://travis-ci.org/pug-php/pug-filter-stylus)
-[![Code Climate](https://codeclimate.com/github/pug-php/pug-filter-stylus/badges/gpa.svg)](https://codeclimate.com/github/pug-php/pug-filter-stylus)
-[![Test Coverage](https://codeclimate.com/github/pug-php/pug-filter-stylus/badges/coverage.svg)](https://codeclimate.com/github/pug-php/pug-filter-stylus/coverage)
-[![StyleCI](https://styleci.io/repos/61811961/shield?branch=master)](https://styleci.io/repos/61811961)
+[![Latest Stable Version](https://poser.pugx.org/pug-php/pug-filter-less/v/stable.png)](https://packagist.org/packages/pug-php/pug-filter-less)
+[![Build Status](https://travis-ci.org/pug-php/pug-filter-less.svg?branch=master)](https://travis-ci.org/pug-php/pug-filter-less)
+[![Code Climate](https://codeclimate.com/github/pug-php/pug-filter-less/badges/gpa.svg)](https://codeclimate.com/github/pug-php/pug-filter-less)
+[![Test Coverage](https://codeclimate.com/github/pug-php/pug-filter-less/badges/coverage.svg)](https://codeclimate.com/github/pug-php/pug-filter-less/coverage)
+[![StyleCI](https://styleci.io/repos/64429930/shield?branch=master)](https://styleci.io/repos/64429930)
 
 This template:
 ```pug
@@ -15,14 +15,18 @@ This template:
 - $color = 'red'
 
 head
-  :stylus
-    prev = yellow
-    p
-      color #{color}
-      a
-        color #{prev}
-      em
-        color prev
+  :less
+    @prev: yellow;
+    p {
+      width: 200px;
+      color: #{color};
+      a {
+        color: #{prev};
+      }
+      em {
+        color: @prev;
+      }
+    }
 body
   p
     | I'm

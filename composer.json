@@ -1,9 +1,9 @@
 {
-    "name": "pug-php/pug-filter-stylus",
+    "name": "pug-php/pug-filter-less",
     "replace": {
-        "kylekatarnls/jade-filter-stylus": "self.version"
+        "kylekatarnls/jade-filter-less": "self.version"
     },
-    "description": "Render stylus code as compiled CSS in a style tag",
+    "description": "Render Less code as compiled CSS in a style tag",
     "type": "library",
     "license": "MIT",
     "authors": [
