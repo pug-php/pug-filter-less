@@ -2,7 +2,6 @@
 
 namespace Pug\Filter;
 
-use Pug\Filter\AbstractFilter;
 use NodejsPhpFallback\Less as LessWrapper;
 
 class Less extends AbstractFilter
