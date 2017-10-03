@@ -16,10 +16,13 @@ class Less extends AbstractFilter
 
     public function parse($code)
     {
-        return new LessWrapper(preg_replace_callback(
+        $code = preg_replace('/#\{\$?(.*?)\}/', '<?php echo $$1; ?>', $code);
+        $code = preg_replace_callback(
             '/<\?php.*\?>/',
             array($this, 'replaceVariable'),
             $code
-        ));
+        );
+
+        return new LessWrapper($code);
     }
 }
