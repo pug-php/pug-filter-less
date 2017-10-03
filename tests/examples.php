@@ -39,7 +39,9 @@ class ExamplesTest extends \PHPUnit_Framework_TestCase
      */
     public function testPugGeneration($htmlFile, $pugFile)
     {
-        $pug = new Pug();
+        $pug = new Pug(array(
+            'expressionLanguage' => 'js',
+        ));
         $renderFile = method_exists($pug, 'renderFile')
             ? array($pug, 'renderFile')
             : array($pug, 'render');
