@@ -19,9 +19,9 @@ matrix:
       env: PUG_VERSION='2.7.1'
     - php: 7.1
       env: PUG_VERSION='^3.0@alpha'
-    - php: 7.2
+    - php: 7.2.0RC5
       env: PUG_VERSION='2.7.1'
-    - php: 7.2
+    - php: 7.2.0RC5
       env: PUG_VERSION='^3.0@alpha'
     - php: hhvm
       env: PUG_VERSION='2.7.1'
