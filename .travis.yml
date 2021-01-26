@@ -30,16 +30,34 @@ matrix:
       env: PUG_VERSION='^2.7'
     - php: 7.3
       env: PUG_VERSION='^3.0'
+    - php: 7.4
+      env: PUG_VERSION='^2.7'
+    - php: 7.4
+      env:
+        - PUG_VERSION='^3.0'
+        - COVERAGE_ENABLED=true
+    - php: 8.0
+      env: PUG_VERSION='^2.7'
+    - php: 8.0
+      env: PUG_VERSION='^3.0'
 before_script:
   - travis_retry composer self-update
   - if [ "$PUG_VERSION" != "" ]; then travis_retry composer require "pug-php/pug:${PUG_VERSION}" --no-update; fi;
   - travis_retry composer update --no-interaction
 script:
-  - vendor/bin/phpunit --verbose --coverage-text --coverage-clover=coverage.xml
+  - if [ "$COVERAGE_ENABLED" == "true" ]; then
+      vendor/bin/phpunit --verbose --coverage-text --coverage-clover=coverage.xml;
+    else
+      vendor/bin/phpunit --verbose;
+    fi;
 after_script:
-  - vendor/bin/test-reporter --coverage-report coverage.xml
+  - if [ "$COVERAGE_ENABLED" == "true" ]; then
+      vendor/bin/test-reporter --coverage-report coverage.xml;
+    fi;
 after_success:
-  - bash <(curl -s https://codecov.io/bash)
+  - if [ "$COVERAGE_ENABLED" == "true" ]; then
+      bash <(curl -s https://codecov.io/bash);
+    fi;
 addons:
   code_climate:
     repo_token: 25328431329b40920e6ddb0ef51ec0bb863500568db2467e9abcff726347e29e
